@@ -1,0 +1,11 @@
+var package_name = "hello-world";
+var package_version = "0.0.1";
+
+fn install() {
+	$echo "hello, world :)"
+	$ls
+	$touch test.txt
+}
+fn uninstall() {
+	$rm test.txt
+}

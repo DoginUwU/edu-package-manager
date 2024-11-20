@@ -4,23 +4,6 @@ const BuilderContext = @import("../builder/interpreter.zig").BuilderContext;
 const edu = @import("../commons/edu_language.zig");
 const downloader = @import("../commons/downloader.zig");
 
-// TODO: Remove this and use github as host
-const packages = [_]Package{
-    Package{ .name = "hello-world", .source = 
-    \\var package_name = "hello-world";
-    \\var package_version = "0.0.1";
-    \\
-    \\fn install() {
-    \\  $echo "hello, world :)"
-    \\  $ls
-    \\  $touch test.txt
-    \\}
-    \\fn uninstall() {
-    \\  $rm test.txt
-    \\}
-    }, //
-};
-
 pub fn handlerInstall(allocator: std.mem.Allocator, value: []const u8) !bool {
     std.debug.print("Trying to find package with name: {s}\n", .{value});
     const source = try downloader.readFromURL(allocator, "");
