@@ -1,5 +1,6 @@
 const std = @import("std");
 const handlerInstall = @import("commands/install.zig").handlerInstall;
+const handlerUninstall = @import("commands/uninstall.zig").handlerUninstall;
 
 const Command = struct {
     name: []const u8,
@@ -8,6 +9,7 @@ const Command = struct {
 
 pub const commands = [_]Command{
     Command{ .name = "install", .function = handlerInstall }, //
+    Command{ .name = "uninstall", .function = handlerUninstall },
 };
 
 pub fn handleCliArguments(alloc: std.mem.Allocator) !void {
